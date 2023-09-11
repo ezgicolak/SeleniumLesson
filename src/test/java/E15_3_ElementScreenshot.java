@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
-public class E15_2_InvokingMultipleWindowsTabs {
+public class E15_3_ElementScreenshot {
 
     @Test
     public void test() throws IOException {
@@ -50,15 +50,10 @@ public class E15_2_InvokingMultipleWindowsTabs {
 
         File file=name.getScreenshotAs(OutputType.FILE);
 
-        FileUtils.copyFile(file, new File("logo2.png"));
+        FileUtils.copyFile(file, new File("logo.png"));
 
 //driver.quit();
 
-//GEt Height & Width
-
-        System.out.println(name.getRect().getDimension().getHeight());
-
-        System.out.println(name.getRect().getDimension().getWidth());
 
     }
 
