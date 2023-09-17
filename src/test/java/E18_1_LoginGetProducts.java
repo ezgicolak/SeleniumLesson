@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.IOException;
 import java.util.List;
 
-public class E18_1_LoginGetProducts_Fail {
+public class E18_1_LoginGetProducts {
 
     @Test
     public void test() throws IOException {

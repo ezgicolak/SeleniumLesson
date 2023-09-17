@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
-public class E18_2_WaitsPro {
+public class E18_3_CartCheckout_Fail {
 
     @Test
     public void test() throws IOException {
@@ -43,11 +44,23 @@ public class E18_2_WaitsPro {
 
 
 
-       wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
 
 
         driver.findElement(By.xpath("/html/body/app-root/app-dashboard/app-sidebar/nav/ul/li[4]/button")).click();
 
+        String productname = "ZARA COAT 3" ;
+
+        List<WebElement> cartproducts = driver.findElements(By.xpath("/html/body/app-root/app-profile/div/div[2]"));
+
+
+
+       boolean match = cartproducts.stream().anyMatch(cartproduct->cartproduct.getText().equalsIgnoreCase(productname));
+       Assert.assertTrue(match);
+
+       driver.findElement(By.xpath("/html/body/app-root/app-profile/div/div[3]/ul/li[3]/button")).click();
+
+
 
 
 
@@ -55,5 +68,4 @@ public class E18_2_WaitsPro {
 
 
     }
-
-    }
+}
