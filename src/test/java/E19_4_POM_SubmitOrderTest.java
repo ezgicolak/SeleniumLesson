@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.bouncycastle.jcajce.provider.asymmetric.ecgost12.ECGOST2012SignatureSpi256;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -8,19 +9,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
 import java.time.Duration;
 
-public class E19_4_POM_SubmitOrderTest {
+public class E19_4_POM_SubmitOrderTest extends E20_1_CreateBaseTest {
 
     @Test
     public void test() throws IOException {
 
-        WebDriverManager.chromedriver().setup();
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        E19_1_POM_LoginPage loginPage = new E19_1_POM_LoginPage(driver);
-        loginPage.goTo();
-        loginPage.login("anshika@gmail.com","Iamking@000");
+
+        launchApplication().login("anshika@gmail.com","Iamking@000");
         E19_2_POM_ProductCatalog productCatalog = new E19_2_POM_ProductCatalog(driver);
         productCatalog.addProductToCart();
         productCatalog.goToCartPage();
