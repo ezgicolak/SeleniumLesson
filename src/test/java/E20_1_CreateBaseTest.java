@@ -3,7 +3,9 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 
 import java.io.FileInputStream;
@@ -23,13 +25,12 @@ public class E20_1_CreateBaseTest {
         //properties class
 
         Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\GlobalData.properties");
+        FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "\\src\\test\\java\\GlobalData.properties");
         prop.load(fis);
         String browserName = prop.getProperty("browser");
 
 
-        if(browserName.equalsIgnoreCase("chrome"))
-        {
+        if (browserName.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
 
@@ -38,7 +39,7 @@ public class E20_1_CreateBaseTest {
             //Firefox
         } else if (browserName.equalsIgnoreCase("edge")) {
 
-            System.setProperty("webdriver.edge.driver","edge.exe");
+            System.setProperty("webdriver.edge.driver", "edge.exe");
             driver = new EdgeDriver();
 
         }
@@ -61,11 +62,12 @@ public class E20_1_CreateBaseTest {
 
     }
 
-    @AfterMethod
-    public  void tearDown(){
+     @AfterMethod
+     public void tearDown()  {
         driver.close();
-    }
 
-
+     }
 
 }
+
+

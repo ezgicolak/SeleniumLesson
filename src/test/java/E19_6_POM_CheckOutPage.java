@@ -32,7 +32,7 @@ public class E19_6_POM_CheckOutPage extends E19_3_POM_AbstractComponents {
 
         Actions a = new Actions(driver);
         a.sendKeys(country,countryName).build().perform();
-        waitForElementToAppear(results);
+        waitForElementToAppear((WebElement) results);
         selectCounrty.click();
     }
 

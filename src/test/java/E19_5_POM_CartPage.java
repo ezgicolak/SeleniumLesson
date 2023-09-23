@@ -21,7 +21,7 @@ public class E19_5_POM_CartPage extends E19_3_POM_AbstractComponents {
 
     public void goToCheckOut(){
 
-        waitForElementToAppear(checkout);
+        waitForElementToAppear((WebElement) checkout);
         checkoutEle.click();
 
 

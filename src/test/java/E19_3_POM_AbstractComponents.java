@@ -20,12 +20,12 @@ public class E19_3_POM_AbstractComponents {
 
 
 
-    public void waitForElementToAppear(By findBy){
+    public void waitForElementToAppear(WebElement findBy){
 
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
+        wait.until(ExpectedConditions.visibilityOf(findBy));
 
 
 

@@ -23,6 +23,9 @@ public class E19_1_POM_LoginPage extends E19_3_POM_AbstractComponents {
     @FindBy(id="login")
     WebElement  submit;
 
+    @FindBy(xpath = "//div[@aria-label='Incorrect email or password.']")
+    WebElement errorMassage;
+
     public void login(String email,String password){
 
         userEmail.sendKeys(email);
@@ -35,6 +38,12 @@ public class E19_1_POM_LoginPage extends E19_3_POM_AbstractComponents {
         driver.get("https://rahulshettyacademy.com/client");
 
 
+    }
+
+    public String getErrorMassage(){
+
+        waitForElementToAppear(errorMassage);
+        return errorMassage.getText();
     }
 
 

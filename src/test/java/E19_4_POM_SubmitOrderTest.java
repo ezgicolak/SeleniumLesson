@@ -12,7 +12,7 @@ import java.time.Duration;
 public class E19_4_POM_SubmitOrderTest extends E20_1_CreateBaseTest {
 
     @Test
-    public void test() throws IOException {
+    public void test() throws IOException,InterruptedException {
 
 
         launchApplication().login("anshika@gmail.com","Iamking@000");

@@ -26,7 +26,7 @@ public class E19_2_POM_ProductCatalog extends E19_3_POM_AbstractComponents{
     public void addProductToCart(){
 
         driver.findElement(addToCart).click();
-        waitForElementToAppear(toast);
+        waitForElementToAppear((WebElement) toast);
         waitForElementToDissappear(spinner);
 
 
