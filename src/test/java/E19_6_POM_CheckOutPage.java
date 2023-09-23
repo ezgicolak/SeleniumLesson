@@ -25,7 +25,9 @@ public class E19_6_POM_CheckOutPage extends E19_3_POM_AbstractComponents {
     @FindBy(xpath = "/html/body/app-root/app-order/section/div/div/div[2]/div/div/div[3]/div[2]/div[2]/div/div[1]/div/section/button[1]/span")
     WebElement selectCounrty;
 
-    By results = By.xpath("/html/body/app-root/app-order/section/div/div/div[2]/div/div/div[3]/div[2]/div[2]/div/div[1]/div/section/button[1]/span");
+    @FindBy(xpath = "/html/body/app-root/app-order/section/div/div/div[2]/div/div/div[3]/div[2]/div[2]/div/div[1]/div/section/button[1]/span")
+    WebElement results;
+
 
 
     public void selectCounrty(String countryName){

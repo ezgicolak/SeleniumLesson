@@ -18,7 +18,9 @@ public class E19_2_POM_ProductCatalog extends E19_3_POM_AbstractComponents{
     @FindBy(css =".ng-animating")
     WebElement spinner;
     By addToCart = By.xpath("//*[@id=\"products\"]/div[1]/div[2]/div[1]/div/div/button[2]");
-    By toast = By.xpath("//*[@id=\"toast-container\"]");
+
+    @FindBy(xpath = "//*[@id=\"toast-container\"]")
+    WebElement toast;
 
     @FindBy(xpath = "/html/body/app-root/app-dashboard/app-sidebar/nav/ul/li[4]/button")
     WebElement cartHeader;
@@ -26,7 +28,7 @@ public class E19_2_POM_ProductCatalog extends E19_3_POM_AbstractComponents{
     public void addProductToCart(){
 
         driver.findElement(addToCart).click();
-        waitForElementToAppear((WebElement) toast);
+        waitForElementToAppear(toast);
         waitForElementToDissappear(spinner);
 
 

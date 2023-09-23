@@ -10,7 +10,10 @@ public class E19_5_POM_CartPage extends E19_3_POM_AbstractComponents {
     @FindBy ( xpath = "/html/body/app-root/app-profile/div/div[3]/ul/li[3]/button")
     WebElement checkoutEle;
 
-    By checkout = By.xpath("/html/body/app-root/app-profile/div/div[3]/ul/li[3]/button");
+    @FindBy ( xpath = "/html/body/app-root/app-profile/div/div[3]/ul/li[3]/button")
+    WebElement checkout;
+
+
 
     public E19_5_POM_CartPage(WebDriver driver) {
 
@@ -21,7 +24,7 @@ public class E19_5_POM_CartPage extends E19_3_POM_AbstractComponents {
 
     public void goToCheckOut(){
 
-        waitForElementToAppear((WebElement) checkout);
+        waitForElementToAppear(checkout);
         checkoutEle.click();
 
 
