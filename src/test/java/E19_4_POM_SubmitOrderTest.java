@@ -41,8 +41,10 @@ public class E19_4_POM_SubmitOrderTest extends E20_1_CreateBaseTest {
      productCatalog.addProductToCart();
      E19_8_OrdersPage ordersPage = new E19_8_OrdersPage(driver);
      ordersPage.gotoOrderPage();
+     Assert.assertTrue(ordersPage.VerifyOrderDisplay("zara coat 3"));
+     
 
-     //driver.close();
+
 
 
 
