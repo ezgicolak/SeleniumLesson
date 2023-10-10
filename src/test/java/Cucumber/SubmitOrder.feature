@@ -8,7 +8,7 @@
     Scenario Outline: Positive Test of Submitting the Order
 
       Given Logged in with username <name> and password <password>
-      When I add product  and submit the order
+      When I add product to cart
       When Checkout  and submit the orders
       Then "THANKYOU FOR THE ORDER." massage is displayed on ConfirmationPage
 

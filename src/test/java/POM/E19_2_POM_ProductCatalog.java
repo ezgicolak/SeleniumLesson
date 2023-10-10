@@ -31,7 +31,7 @@ public class E19_2_POM_ProductCatalog extends E19_3_POM_AbstractComponents{
 
     public void addProductToCart(){
 
-        waitForElementToAppear(addToCart);
+
         addToCart.click();
         waitForElementToAppear(toast);
         waitForElementToDissappear(spinner);

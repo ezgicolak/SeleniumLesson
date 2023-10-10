@@ -14,7 +14,13 @@ public class StepDefinitions extends E20_1_CreateBaseTest {
 
     public E19_1_POM_LoginPage loginPage;
     public E19_2_POM_ProductCatalog productCatalog;
+
+    public E19_5_POM_CartPage cartPage;
+    public E19_6_POM_CheckOutPage checkOutPage;
+
+
     public   E19_7_POM_ConfirmPage confirmPage;
+
 
     @Given("^I landed on Ecomerce Page")
     public void I_landed_on_Ecomerce_Page() throws IOException {
@@ -26,7 +32,7 @@ public class StepDefinitions extends E20_1_CreateBaseTest {
         loginPage.login(username,password);
     }
 
-    @When("I add product  to Cart")
+    @When("I add product to cart")
     public void I_add_product_to_Cart() throws InterruptedException {
         productCatalog.addProductToCart();
         productCatalog.goToCartPage();
@@ -35,16 +41,15 @@ public class StepDefinitions extends E20_1_CreateBaseTest {
     @When("Checkout  and submit the orders")
     public void checkout_submit_order() throws InterruptedException {
 
-        E19_5_POM_CartPage cartPage = new E19_5_POM_CartPage(driver);
+
         cartPage.goToCheckOut();
-        E19_6_POM_CheckOutPage checkOutPage=new E19_6_POM_CheckOutPage(driver);
         checkOutPage.selectCounrty("India");
         checkOutPage.placeOrder();
     }
 
     @Then("{string} massage is displayed on ConfirmationPage")
     public void massage_is_displayed_on_ConfirmationPage(String string) {
-        E19_7_POM_ConfirmPage confirmPage = new E19_7_POM_ConfirmPage(driver);
+
         String confirmMassage =   confirmPage.getConfirmMassage();
         Assert.assertTrue(confirmMassage.equalsIgnoreCase(string));
     }
