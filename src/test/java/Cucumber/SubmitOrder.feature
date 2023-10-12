@@ -4,13 +4,13 @@
   Background:
     Given I landed on Ecomerce Page
 
-    @tag2
+    @Regression
     Scenario Outline: Positive Test of Submitting the Order
 
       Given Logged in with username <name> and password <password>
       When I add product to cart
       When Checkout  and submit the orders
-      Then "THANKYOU FOR THE ORDER." massage is displayed on ConfirmationPage
+      Then "THANK YOU FOR THE ORDER." massage is displayed on ConfirmationPage
 
       Examples:
         | name              | password    | productName |  |
